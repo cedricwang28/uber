@@ -17,7 +17,7 @@ function InputItem({type}) {
     },[]);
 
     const getLatAndLng=(place,type)=>{
-       const placeId=place.value.place_id;
+       const placeId=place?.value.place_id;
        const service=new google.maps.places.PlacesService(document.createElement('div'));
        service.getDetails({placeId},(place,status)=>{
         if(status==='OK' && place.geometry && place.geometry.location)
